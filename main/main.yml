@@ -3,6 +3,6 @@
   gather_facts: no
   tasks: 
   - name: Check the date on the server. 
-    command: date 
+    command: date > /tmp/wt
   - name: Check the eth0 ip on the server. 
-    command: ifconfig eth0 
+    command: ifconfig eth0 >> /tmp/wt
