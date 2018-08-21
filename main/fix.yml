@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - include: /home/weixiaojun/ans/fixc.yml
+      when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
+    - include: /home/weixiaojun/ans/fixu.yml
+      when: ansible_distribution == "Ubuntu"
