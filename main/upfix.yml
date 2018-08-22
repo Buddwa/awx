@@ -3,7 +3,7 @@
   become: yes
   become_user: root
   tasks:
-    - include: /home/weixiaojun/ans/fixc.yml
+    - yum: update_cache=yes update_only=yes state=latest
       when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
-    - include: /home/weixiaojun/ans/fixu.yml
+    - apt: update_cache=yes upgrade=full
       when: ansible_distribution == "Ubuntu"
