@@ -3,7 +3,7 @@
   become: yes
   become_user: root
   tasks:
-    - yum: update_cache=yes update_only=yes state=latest
+    - yum: update_cache=yes update_only=yes name="*" state=latest
       when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
     - apt: update_cache=yes upgrade=full
       when: ansible_distribution == "Ubuntu"
